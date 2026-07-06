@@ -1,1 +1,144 @@
-
+<style>
+  :root {
+    --ink: #1b2420;        /* kawakawa green-black */
+    --mist: #e9ece8;       /* morning mist over the harbour */
+    --haze: #7d8f8a;       /* mid-distance */
+    --pohutukawa: #a6362f; /* used exactly once */
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  html { font-size: 17px; }
+ 
+  body {
+    background: var(--mist);
+    color: var(--ink);
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12vh 8vw;
+  }
+ 
+  main {
+    max-width: 34rem;
+  }
+ 
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--haze);
+    margin-bottom: 3.5rem;
+  }
+ 
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2.4rem, 7vw, 3.9rem);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    margin-bottom: 2.75rem;
+  }
+ 
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+  }
+ 
+  /* the vā — a line whose spaces slowly breathe */
+  .va {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--haze);
+    letter-spacing: 0.02em;
+    margin-bottom: 5.5rem;
+    animation: breathe 9s ease-in-out infinite;
+  }
+ 
+  @keyframes breathe {
+    0%, 100% { word-spacing: 0.1em; }
+    50%      { word-spacing: 0.75em; }
+  }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    .va { animation: none; }
+  }
+ 
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+  }
+ 
+  nav a {
+    display: inline-block;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 1.15rem;
+  }
+ 
+  nav a .label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--haze);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+ 
+  nav a .word {
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.35s ease, color 0.35s ease;
+    padding-bottom: 2px;
+  }
+ 
+  nav a:hover .word,
+  nav a:focus-visible .word {
+    border-bottom-color: var(--pohutukawa);
+    color: var(--pohutukawa);
+  }
+ 
+  nav a:focus-visible {
+    outline: 2px solid var(--pohutukawa);
+    outline-offset: 4px;
+  }
+ 
+  .soon {
+    color: var(--haze);
+    cursor: default;
+  }
+  .soon .word { font-style: italic; }
+  .soon:hover .word { border-bottom-color: transparent; color: var(--haze); }
+ 
+  footer {
+    margin-top: 6rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--haze);
+  }
+ 
+  footer a {
+    color: var(--haze);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+  }
+ 
+  footer a:hover, footer a:focus-visible {
+    color: var(--ink);
+  }
+ 
+  @media (max-width: 480px) {
+    body { padding: 10vh 8vw; }
+    .eyebrow { margin-bottom: 2.5rem; }
+    .va { margin-bottom: 4rem; }
+  }
+</style>
